@@ -1,0 +1,82 @@
+@use "sass:color";
+
+
+$font-stack: Calibri, Candara, Segoe, "Segoe UI",
+             Optima, Arial, sans-serif;
+
+// color
+$color-light: rgb(255, 255, 255);
+$color-light-opacity: color.change($color-light, $alpha: 0.5);
+$color-dark: rgb(163, 177, 198);
+$color-title: color.scale($color-dark, $lightness: -30%);
+$color-text: color.scale($color-dark, $lightness: -80%);
+$color-dark-opacity: color.change($color-dark, $alpha: 0.5);
+$color-box: color.mix(color.scale($color-dark, $lightness: 20%), $color-light);
+
+// size
+$size-title: 50px;
+$size_text: 19px;
+
+
+@mixin inset-text($color, $size, $blur) {
+  background-color: $color;
+  color: transparent;
+  text-shadow: ($size/25) ($size/25) $blur $color-light-opacity;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+@mixin shade($offset, $blur) {
+  box-shadow: (-$offset) (-$offset) $blur 0px $color-light-opacity,
+              $offset $offset $blur 0px $color-dark-opacity;
+}
+
+@mixin shade-inset($offset, $blur) {
+  box-shadow: (-$offset) (-$offset) $blur 0px $color-light-opacity inset,
+              $offset $offset $blur 0px $color-dark-opacity inset;
+}
+
+body {
+  font-family: $font-stack;
+  background-color: $color-box;
+  text-align: justify;
+  font-size: $size_text;
+}
+
+h1 {
+  @include inset-text($color-title, $size-title, 2px);
+  font-size: $size-title;
+}
+
+p {
+  @include inset-text($color-text, $size_text, 1px);
+}
+
+ol {
+  list-style-type: none;
+  padding-left: 0px;
+  @include inset-text($color-text, $size_text, 1px);
+}
+
+header {
+  @include shade(5px, 10px);
+  padding: 10px 30px 5px;
+  border-radius: 20px;
+}
+
+.test {
+  width: 60%;
+  margin: 40px auto 40px;
+  padding: 20px 20px 5px;
+  border-radius: 20px;
+  background-color: $color-box;
+  @include shade-inset(5px, 10px);
+}
+
+.item {
+  @include shade(5px, 10px);
+  padding: 5px 30px;
+  border-radius: 20px;
+  margin: 20px 0;
+}
