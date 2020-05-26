@@ -54,16 +54,6 @@ htmlize_items <- function() {
 
 # launch Shiny app to start personality test
 launch_test <- function() {
-  # generate CSS file
-  path_scss <- system.file("test", "style_test.scss",
-                           package = "personr")
-  path_css <- paste(
-    system.file("test", "www", package = "personr"),
-    "style_test.css",
-    sep = "/"
-  )
-  sass::sass(sass::sass_file(path_scss), output = path_css)
-
   path <- system.file("test", package = "personr")
   shiny::runApp(appDir = path, launch.browser = TRUE)
 }
