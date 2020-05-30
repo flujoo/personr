@@ -23,24 +23,10 @@ test_that("item numbers under factors", {
 })
 
 
-test_that("reverse score", {
-  s <- test$scale$value
-  out <- test$reverse(s)
-  expected <- rev(s)
-  expect_equal(out, expected)
-})
-
-
 test_that("score test", {
-  rs <- rep(1, 50)
-  out <- test$score(rs)
+  rs <- data.frame(t(rep(1, 50)))
+  out <- as.double(score(rs))
   # according to https://openpsychometrics.org/tests/IPIP-BFFM/
-  expected <- list(
-    "Extraversion" = 3,
-    "Agreeableness" = 2.6,
-    "Conscientiousness" = 2.6,
-    "Emotional Stability" = 4.2,
-    "Intellect/Imagination" = 2.2
-  )
+  expected <- c(3, 2.6, 2.6, 4.2, 2.2)
   expect_equal(out, expected)
 })
