@@ -2,8 +2,6 @@
 # raw data "BIG5" downloaded from:
 # https://openpsychometrics.org/_rawdata/
 
-# import normative group data
-norm <- readr::read_delim("BIG5/data.csv", delim = "\t")
 
 # correct response-columns' order
 response_cols <- unlist(lapply(
@@ -11,32 +9,32 @@ response_cols <- unlist(lapply(
   function(i) { paste(c("E", "A", "C", "N", "O"), i, sep = "") }
 ))
 
-# arrange columns
-norm <- as.data.frame(dplyr::select(
-  norm, dplyr::one_of(response_cols), dplyr::everything()))
+# keep only some columns
+cols <- c(names(test$factors), "race", "age", "gender", "country")
 
-# score
-norm <- score(norm)
+
+# import normative group data
+norm <- read_delim("BIG5/data.csv", delim = "\t") %>%
+  select(one_of(response_cols), everything()) %>%
+  as.data.frame %>%
+  score %>%
+  .[, cols]
+
 
 # plots
 plots <- list()
 
-plots$Extraversion <- ggplot2::ggplot() +
-  ggplot2::geom_density(data = norm,
-                        ggplot2::aes(Extraversion))
+plots$Extraversion <- ggplot() +
+  geom_density(data = norm, aes(Extraversion))
 
-plots$Agreeableness <- ggplot2::ggplot() +
-  ggplot2::geom_density(data = norm,
-                        ggplot2::aes(Agreeableness))
+plots$Agreeableness <- ggplot() +
+  geom_density(data = norm, aes(Agreeableness))
 
-plots$Conscientiousness <- ggplot2::ggplot() +
-  ggplot2::geom_density(data = norm,
-                        ggplot2::aes(Conscientiousness))
+plots$Conscientiousness <- ggplot() +
+  geom_density(data = norm, aes(Conscientiousness))
 
-plots$`Emotional Stability` <- ggplot2::ggplot() +
-  ggplot2::geom_density(data = norm,
-                        ggplot2::aes(`Emotional Stability`))
+plots$`Emotional Stability` <- ggplot() +
+  geom_density(data = norm, aes(`Emotional Stability`))
 
-plots$`Intellect/Imagination` <- ggplot2::ggplot() +
-  ggplot2::geom_density(data = norm,
-                        ggplot2::aes(`Intellect/Imagination`))
+plots$`Intellect/Imagination` <- ggplot() +
+  geom_density(data = norm, aes(`Intellect/Imagination`))
