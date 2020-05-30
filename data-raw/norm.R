@@ -11,5 +11,32 @@ response_cols <- unlist(lapply(
   function(i) { paste(c("E", "A", "C", "N", "O"), i, sep = "") }
 ))
 
+# arrange columns
 norm <- as.data.frame(dplyr::select(
   norm, dplyr::one_of(response_cols), dplyr::everything()))
+
+# score
+norm <- score(norm)
+
+# plots
+plots <- list()
+
+plots$Extraversion <- ggplot2::ggplot() +
+  ggplot2::geom_density(data = norm,
+                        ggplot2::aes(Extraversion))
+
+plots$Agreeableness <- ggplot2::ggplot() +
+  ggplot2::geom_density(data = norm,
+                        ggplot2::aes(Agreeableness))
+
+plots$Conscientiousness <- ggplot2::ggplot() +
+  ggplot2::geom_density(data = norm,
+                        ggplot2::aes(Conscientiousness))
+
+plots$`Emotional Stability` <- ggplot2::ggplot() +
+  ggplot2::geom_density(data = norm,
+                        ggplot2::aes(`Emotional Stability`))
+
+plots$`Intellect/Imagination` <- ggplot2::ggplot() +
+  ggplot2::geom_density(data = norm,
+                        ggplot2::aes(`Intellect/Imagination`))

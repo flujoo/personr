@@ -4,4 +4,8 @@
 source("test.R", chdir = TRUE)
 source("norm.R", chdir = TRUE)
 
-usethis::use_data(test, norm, internal = TRUE, overwrite = TRUE)
+usethis::use_data(
+  test, score, norm, plots,
+  internal = TRUE,
+  overwrite = TRUE
+)
