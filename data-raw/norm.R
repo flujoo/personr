@@ -37,6 +37,3 @@ for (f in names(test$factors)) {
       fill = "#3484bc", alpha = 0.4
   )
 }
-
-
-detach("package:magrittr", unload = TRUE)
