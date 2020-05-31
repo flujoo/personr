@@ -5,10 +5,7 @@
 personr_globals <- new.env()
 
 # working directory
-personr_globals$wd <- character(0)
-
-# store subject's responses
-personr_globals$responses <- integer(0)
+personr_globals$wd <- getwd()
 
 
 # wrap scale up in HTML
