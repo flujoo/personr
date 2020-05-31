@@ -29,7 +29,7 @@ usethis::use_data(
 rm(list = ls())
 detach("package:readr")
 detach("package:dplyr")
-detach("package:ggplot2")
+# detach("package:ggplot2")
 detach("package:magrittr")
 
 
