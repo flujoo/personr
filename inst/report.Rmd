@@ -1,0 +1,24 @@
+---
+title: "Your Test Results"
+output:
+  html_document:
+    css: {{ path_style }}
+---
+
+
+## Title
+
+some words being spoken
+
+```{r echo=FALSE}
+library(ggplot2)
+library(ggthemr)
+ggthemr('flat dark')
+
+# fake scores
+# personr_globals$responses
+d <- score((rep(1, 50)))
+
+ggplot(d) +
+  geom_bar(aes(factor, score, fill = factor), stat = "identity")
+```
