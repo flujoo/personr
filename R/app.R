@@ -1,31 +1,38 @@
-# make the package a Shiny app
+# Shiny app for generating personality test
+
+
+# global variables
+personr_globals <- new.env()
+
+# working directory
+personr_globals$wd <- character(0)
+
+# store subject's responses
+personr_globals$responses <- integer(0)
+
 
 # wrap scale up in HTML
 htmlize_scale <- function(statement_number) {
-  # scale labels
-  sls <- test$scale$label
-  # scale values
-  svs <- test$scale$value
+  # scale
+  s <- test$scale
   # scale length
   n <- nrow(test$scale)
-  # wrap scale
-  s_html <- list()
+  # statements
+  ss <- test$statements
+
+  choices <- list()
   for (i in 1:n) {
-    s_i <- shiny::tags$li(
-      # input element
-      shiny::tags$input(
-        type = "radio",
-        id = paste("value", i, sep = "_"),
-        name = paste("item", statement_number, sep = "_"),
-        value = svs[i]
-      ),
-      # label element
-      shiny::tags$label(sls[i], "for" = paste("value", i, sep = "_"))
-    )
-    s_html[[i]] <- s_i
+    choices[[s$label[i]]] = s$value[i]
   }
-  # ordered list element
-  shiny::tags$ol(s_html, class = "scale")
+  id <- paste("item", statement_number, sep = "_")
+  label <- ss[statement_number]
+
+  shiny::radioButtons(
+    inputId = id,
+    label = label,
+    choices = choices,
+    selected = FALSE
+  )
 }
 
 
@@ -39,8 +46,6 @@ htmlize_items <- function() {
   items <- list()
   for (i in 1:n) {
     item_i <- shiny::div(
-      # wrap statement
-      shiny::p(ss[i], class = "statement"),
       # wrap scale
       htmlize_scale(i),
       class = "item",
@@ -53,7 +58,11 @@ htmlize_items <- function() {
 
 
 # launch Shiny app to start personality test
-launch_test <- function() {
-  path <- system.file("test", package = "personr")
-  shiny::runApp(appDir = path, launch.browser = TRUE)
+launch_test <- function(path = getwd()) {
+  # set working directory
+  personr_globals$wd <<- path
+  shiny::runApp(
+    appDir = system.file("app", package = "personr"),
+    launch.browser = TRUE
+  )
 }
