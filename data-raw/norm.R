@@ -3,6 +3,9 @@
 # https://openpsychometrics.org/_rawdata/
 
 
+library(magrittr)
+
+
 # correct response-columns' order
 response_cols <- unlist(lapply(
   1:10,
@@ -14,8 +17,8 @@ cols <- c(names(test$factors), "race", "age", "gender", "country")
 
 
 # import normative group data
-norm <- read_delim("BIG5/data.csv", delim = "\t") %>%
-  select(one_of(response_cols), everything()) %>%
+norm <- readr::read_delim("BIG5/data.csv", delim = "\t") %>%
+  dplyr::select(dplyr::one_of(response_cols), dplyr::everything()) %>%
   as.data.frame %>%
   score %>%
   .[, cols]
@@ -27,8 +30,13 @@ plots <- list()
 # https://github.com/tidyverse/ggplot2/issues/
 # 2447#issuecomment-364955240
 for (f in names(test$factors)) {
-  f_sym <- sym(f)
-  plots[[f]] <- ggplot() +
-    geom_density(data = norm, aes(!!f_sym),
-                 fill = "#3484bc", alpha = 0.4)
+  f_sym <- rlang::sym(f)
+  plots[[f]] <- ggplot2::ggplot() +
+    ggplot2::geom_density(
+      data = norm, ggplot2::aes(!!f_sym),
+      fill = "#3484bc", alpha = 0.4
+  )
 }
+
+
+detach("package:magrittr", unload = TRUE)

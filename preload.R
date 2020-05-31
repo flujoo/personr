@@ -12,11 +12,6 @@ system("sass style.scss inst/app/www/style.css")
 
 
 # use data in data-raw/
-library(readr)
-library(dplyr)
-library(ggplot2)
-library(magrittr)
-
 source("data-raw/test.R", chdir = TRUE)
 source("data-raw/norm.R", chdir = TRUE)
 
@@ -27,10 +22,6 @@ usethis::use_data(
 )
 
 rm(list = ls())
-detach("package:readr")
-detach("package:dplyr")
-# detach("package:ggplot2")
-detach("package:magrittr")
 
 
 devtools::load_all()
