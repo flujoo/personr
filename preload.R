@@ -1,6 +1,7 @@
 # preload this file to
 # 1. compile style.scss
 # 2. use data in data-raw/
+# 3. finally, devtools::load_all()
 
 # in dir "personr"
 # source("preload.R")
@@ -26,7 +27,11 @@ usethis::use_data(
 )
 
 rm(list = ls())
-detach("package:readr", unload = TRUE)
-detach("package:dplyr", unload = TRUE)
-detach("package:ggplot2", unload = TRUE)
-detach("package:magrittr", unload = TRUE)
+detach("package:readr")
+detach("package:dplyr")
+detach("package:ggplot2")
+detach("package:magrittr")
+
+
+devtools::load_all()
+launch_test("~/Desktop/")
