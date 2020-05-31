@@ -26,3 +26,4 @@ rm(list = ls())
 
 devtools::load_all()
 launch_test("~/Desktop/")
+report(rep(1, 50), "~/Desktop/")
