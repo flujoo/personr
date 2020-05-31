@@ -24,17 +24,11 @@ norm <- read_delim("BIG5/data.csv", delim = "\t") %>%
 # plots
 plots <- list()
 
-plots$Extraversion <- ggplot() +
-  geom_density(data = norm, aes(Extraversion))
-
-plots$Agreeableness <- ggplot() +
-  geom_density(data = norm, aes(Agreeableness))
-
-plots$Conscientiousness <- ggplot() +
-  geom_density(data = norm, aes(Conscientiousness))
-
-plots$`Emotional Stability` <- ggplot() +
-  geom_density(data = norm, aes(`Emotional Stability`))
-
-plots$`Intellect/Imagination` <- ggplot() +
-  geom_density(data = norm, aes(`Intellect/Imagination`))
+# https://github.com/tidyverse/ggplot2/issues/
+# 2447#issuecomment-364955240
+for (f in names(test$factors)) {
+  f_sym <- sym(f)
+  plots[[f]] <- ggplot() +
+    geom_density(data = norm, aes(!!f_sym),
+                 fill = "#3484bc", alpha = 0.4)
+}

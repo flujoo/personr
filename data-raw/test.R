@@ -50,7 +50,7 @@ test$factors <- list(
 
 
 # score test
-score <- function(responses) UseMethod("score")
+score <- function(responses) UseMethod("score", responses)
 
 # score single subject's outcome
 score.numeric <- function(responses) {

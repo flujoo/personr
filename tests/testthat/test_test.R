@@ -25,8 +25,24 @@ test_that("item numbers under factors", {
 
 test_that("score single test", {
   rs <- rep(1, 50)
-  out <- score(rs)$score
+  out <- score.numeric(rs)$score
   # according to https://openpsychometrics.org/tests/IPIP-BFFM/
   expected <- c(3, 2.6, 2.6, 4.2, 2.2)
+  expect_equal(out, expected)
+})
+
+
+test_that("score norm data", {
+  rs <- as.data.frame(t(rep(1, 50)))
+  out <- score.data.frame(rs)[, names(test$factors)]
+  # according to https://openpsychometrics.org/tests/IPIP-BFFM/
+  expected <- data.frame(
+    Extraversion = 3,
+    Agreeableness = 2.6,
+    Conscientiousness = 2.6,
+    `Emotional Stability` = 4.2,
+    `Intellect/Imagination` = 2.2,
+    check.names = FALSE
+  )
   expect_equal(out, expected)
 })
