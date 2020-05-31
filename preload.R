@@ -1,15 +1,23 @@
-# source current file to use all data in data-raw/
+# preload this file to
+# 1. compile style.scss
+# 2. use data in data-raw/
 
 # in dir "personr"
-# source("data-raw/README.R", chdir = TRUE)
+# source("preload.R")
 
+
+# compile style.scss
+system("sass style.scss inst/app/www/style.css")
+
+
+# use data in data-raw/
 library(readr)
 library(dplyr)
 library(ggplot2)
 library(magrittr)
 
-source("test.R", chdir = TRUE)
-source("norm.R", chdir = TRUE)
+source("data-raw/test.R", chdir = TRUE)
+source("data-raw/norm.R", chdir = TRUE)
 
 usethis::use_data(
   test, score, score.numeric, score.data.frame, norm, plots,
