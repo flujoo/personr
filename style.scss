@@ -53,12 +53,8 @@ img {
     width: 100% !important;
   }
 
-  main {
-    padding-top: 10px;
-  }
-
   .item {
-    margin: 20px 0;
+    margin: 50px 0;
   }
 
   button {
@@ -70,10 +66,6 @@ img {
     float: right;
     color: $color-text;
     background-color: $color-bg;
-  }
-
-  button:active {
-    font-size: 19px * 0.99;
   }
 }
 

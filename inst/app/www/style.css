@@ -45,11 +45,8 @@ img {
 .test .shiny-input-container {
   width: 100% !important;
 }
-.test main {
-  padding-top: 10px;
-}
 .test .item {
-  margin: 20px 0;
+  margin: 50px 0;
 }
 .test button {
   padding: 20px 30px;
@@ -60,9 +57,6 @@ img {
   float: right;
   color: #766c60;
   background-color: #faf7f2;
-}
-.test button:active {
-  font-size: 18.81px;
 }
 
 @media screen and (max-width: 950px) {
