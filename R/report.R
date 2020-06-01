@@ -1,4 +1,21 @@
-# generate report
+#' @title Generate a Personality Test Report
+#'
+#' @description Generate a personality test report without launching the test.
+#'
+#' @param responses A integer vector to represent
+#' your answers to the questions in the test.
+#' @param path A string to set where to store your test report.
+#'
+#' @details \code{report} will be automatically called after
+#' you call \code{launch_test} and submit your responses. Two files
+#' named "report.Rmd" and "report.html" will generate in your path.
+#'
+#' The report summaries your test results, and compares them to other people's
+#' to tell you what the results mean.
+#'
+#' @seealso \code{\link{lauch_test}} to lauch the personality test.
+#'
+#' @export
 report <- function(responses, path) {
   # path to style.css
   path_style <- system.file("app", "www", "style.css",

@@ -54,7 +54,22 @@ htmlize_items <- function() {
 }
 
 
-# launch Shiny app to start personality test
+#' @title Launch a Personality Test
+#'
+#' @description Launch a personality test and get a report.
+#'
+#' @param path A string to set where to store your test report.
+#'
+#' @details The test is called "Big Five Personality Test" and is from
+#' \url{https://openpsychometrics.org/tests/IPIP-BFFM/}.
+#'
+#' After you finish and submit your responses,
+#' a report will generate in your path.
+#'
+#' @seealso \code{\link{report}} for generating report
+#' without calling \code{launch_test}.
+#'
+#' @export
 launch_test <- function(path = getwd()) {
   # set working directory
   personr_globals$wd <<- path
