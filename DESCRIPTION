@@ -13,7 +13,8 @@ Imports:
     ggplot2,
     shiny,
     whisker,
-    rmarkdown
+    rmarkdown,
+    ggthemr
 Suggests: 
     testthat
 Depends: 
