@@ -1,109 +1,84 @@
-@use "sass:color";
-
-
-$font-stack: Calibri, Candara, Segoe, "Segoe UI",
-             Optima, Arial, sans-serif;
-
-// color
-$color-light: rgb(255, 255, 255);
-$color-light-opacity: color.change($color-light, $alpha: 0.5);
-$color-dark: rgb(163, 177, 198);
-$color-title: color.scale($color-dark, $lightness: -30%);
-$color-text: color.scale($color-dark, $lightness: -80%);
-$color-dark-opacity: color.change($color-dark, $alpha: 0.5);
-$color-box: color.mix(color.scale($color-dark, $lightness: 20%), $color-light);
-
-// size
-$size-title: 50px;
-$size-text: 19px;
-
-
-@mixin inset-text($color, $size, $blur) {
-  background-color: $color;
-  color: transparent;
-  text-shadow: ($size/25) ($size/25) $blur $color-light-opacity;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-}
-
-@mixin shade($offset, $blur) {
-  box-shadow: (-$offset) (-$offset) $blur 0px $color-light-opacity,
-              $offset $offset $blur 0px $color-dark-opacity;
-}
-
-@mixin shade-inset($offset, $blur) {
-  box-shadow: (-$offset) (-$offset) $blur 0px $color-light-opacity inset,
-              $offset $offset $blur 0px $color-dark-opacity inset;
-}
+$color-bg: #faf7f2;
+$color-text: #766c60;
 
 
 body {
-  font-family: $font-stack;
-  background-color: $color-box;
+  background-color: $color-bg;
+  color: $color-text;
+  font-size: 19px;
   text-align: justify;
-  font-size: $size-text;
+}
+
+.main-container, .test {
+  background-color: #fff;
+  margin: 60px auto 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 20px;
 }
 
 h1 {
-  @include inset-text($color-title, $size-title, 2px);
-  font-size: $size-title;
   text-align: left;
 }
 
-p, .control-label, span {
-  @include inset-text($color-text, $size-text, 1px);
+.title {
+  margin: 80px auto 60px;
+  font-size: 40px !important;
 }
 
-.control-label {
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.shiny-options-group {
-  margin-top: 5px !important;
-}
-
-header {
-  @include shade(5px, 10px);
-  padding: 10px 30px 5px;
-  border-radius: 20px;
+img {
+  margin: 40px auto 40px;
 }
 
 .test {
-  width: 800px;
-  margin: 40px auto 40px;
-  padding: 20px 20px 90px;
-  border-radius: 20px;
-  background-color: $color-box;
-  @include shade-inset(5px, 10px);
-}
+  width: 840px;
+  padding-bottom: 100px;
 
-.item {
-  @include shade(5px, 10px);
-  padding: 20px 30px;
-  border-radius: 20px;
-  margin: 20px 0;
-}
+  h1 {
+    padding-top: 80px;
+    padding-bottom: 25px;
+    font-size: 40px;
+  }
 
-@media screen and (max-width: 900px) {
-  .test {
-    width: 90%;
+  .control-label {
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+
+  .shiny-options-group {
+    margin-top: 5px !important;
+  }
+
+  .shiny-input-container {
+    width: 100% !important;
+  }
+
+  main {
+    padding-top: 10px;
+  }
+
+  .item {
+    margin: 20px 0;
+  }
+
+  button {
+    padding: 20px 30px;
+    font-size: 19px;
+    border-radius: 20px;
+    border-color: transparent;
+    outline: none;
+    float: right;
+    color: $color-text;
+    background-color: $color-bg;
+  }
+
+  button:active {
+    font-size: 19px * 0.99;
   }
 }
 
-button {
-  padding: 20px 30px;
-  @include shade(5px, 10px);
-  font-size: $size-text;
-  border-radius: 20px;
-  border-color: transparent;
-  @include inset-text($color-text, $size-text, 1px);
-  outline: none;
-  float: right;
-}
-
-button:active {
-  @include shade-inset(5px, 10px);
-  font-size: $size-text * 0.99;
+@media screen and (max-width: 950px) {
+  .test {
+    width: 80%;
+  }
 }
