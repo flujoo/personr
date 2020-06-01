@@ -11,10 +11,10 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     ggplot2,
-    shiny,
-    whisker,
+    ggthemr,
     rmarkdown,
-    ggthemr
+    shiny,
+    whisker
 Suggests: 
     testthat
 Depends: 
