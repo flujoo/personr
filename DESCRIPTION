@@ -1,2 +1,20 @@
+Package: personr
+Type: Package
+Title: Test Your Personality
+Version: 1.0.0
+Author: Renfei Mao
+Maintainer: Renfei Mao <renfeimao@gmail.com>
+Description: This package generates a science-based personality
+    test in your browser, and a report after you finish the test.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Imports:
+    ggplot2,
+    shiny,
+    whisker,
+    rmarkdown
+Suggests: 
+    testthat
 Depends: 
     R (>= 2.10)
