@@ -13,7 +13,7 @@
 #' The report summaries your test results, and compares them to other people's
 #' to tell you what the results mean.
 #'
-#' @seealso \code{\link{lauch_test}} to lauch the personality test.
+#' @seealso \code{\link{launch_test}} to launch the personality test.
 #'
 #' @export
 report <- function(responses, path) {
@@ -42,5 +42,5 @@ report <- function(responses, path) {
   # render rmd
   rmarkdown::render(path_rmd, output_dir = path)
   # open
-  browseURL(path_html)
+  utils::browseURL(path_html)
 }

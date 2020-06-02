@@ -24,5 +24,5 @@ The report summaries your test results, and compares them to other people's
 to tell you what the results mean.
 }
 \seealso{
-\code{\link{lauch_test}} to lauch the personality test.
+\code{\link{launch_test}} to launch the personality test.
 }
