@@ -22,18 +22,3 @@ norm <- readr::read_delim("BIG5/data.csv", delim = "\t") %>%
   as.data.frame %>%
   score %>%
   .[, cols]
-
-
-# plots
-plots <- list()
-
-# https://github.com/tidyverse/ggplot2/issues/
-# 2447#issuecomment-364955240
-for (f in names(test$factors)) {
-  f_sym <- rlang::sym(f)
-  plots[[f]] <- ggplot2::ggplot() +
-    ggplot2::geom_density(
-      data = norm, ggplot2::aes(!!f_sym),
-      fill = "#3484bc", alpha = 0.4
-  )
-}
