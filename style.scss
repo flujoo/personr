@@ -1,11 +1,14 @@
 $color-bg: #faf7f2;
 $color-text: #766c60;
 
+$size-text: 17px;
+$size-title: 35px;
+
 
 body {
   background-color: $color-bg;
   color: $color-text;
-  font-size: 19px;
+  font-size: $size-text;
   text-align: justify;
 }
 
@@ -22,8 +25,8 @@ h1 {
 }
 
 .title {
-  margin: 80px auto 60px;
-  font-size: 40px !important;
+  margin: 75px auto 45px;
+  font-size: $size-title !important;
 }
 
 img {
@@ -32,12 +35,12 @@ img {
 
 .test {
   width: 840px;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
 
   h1 {
-    padding-top: 80px;
-    padding-bottom: 25px;
-    font-size: 40px;
+    padding-top: 70px;
+    padding-bottom: 15px;
+    font-size: $size-title;
   }
 
   .control-label {
@@ -54,12 +57,12 @@ img {
   }
 
   .item {
-    margin: 50px 0;
+    margin: 30px 0;
   }
 
   button {
-    padding: 20px 30px;
-    font-size: 19px;
+    padding: 10px 15px;
+    font-size: $size-text;
     border-radius: 20px;
     border-color: transparent;
     outline: none;
