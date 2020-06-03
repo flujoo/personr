@@ -54,6 +54,9 @@ htmlize_items <- function() {
 }
 
 
+# https://stackoverflow.com/questions/37830819/
+# developing-shiny-app-as-a-package-and-deploying-it-to-shiny-server
+
 #' @title Launch a Personality Test
 #'
 #' @description Launch a personality test and get a report.
