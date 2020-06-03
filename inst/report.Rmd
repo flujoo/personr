@@ -1,24 +1,58 @@
 ---
-title: "Your Test Results"
+title: "Your Personality Test Results"
 output:
   html_document:
     css: {{ path_style }}
 ---
 
 
-## Title
+```{r echo=FALSE}
+ggthemr::ggthemr('dust')
+```
 
-some words being spoken
+
+The theory behind this test divides personality into 5 traits or factors. Below is your score on each factor:
+
+```{r echo=FALSE, fig.width=8.5}
+d <- score(responses)
+ggplot2::ggplot(d, ggplot2::aes(factor, score, fill = factor)) +
+  ggplot2::geom_col() +
+  ggplot2::coord_cartesian(ylim = c(1,5), expand = FALSE)
+```
+
+
+The first factor is labelled as **Agreeableness**. A person high in agreeableness is friendly and optimistic. Low scorers are critical and aggressive.
+
+In the plot below, your score on this factor is compared with other people's scores. The plot displays a distribution of these people's scores on this factor. The percentage on this plot tells the percentage of people whose score is lower than yours.
 
 ```{r echo=FALSE}
-library(ggplot2)
-library(ggthemr)
-ggthemr('flat dark')
+interpret(d, "Agreeableness")
+```
 
-# fake scores
-# personr_globals$responses
-d <- score((rep(1, 50)))
 
-ggplot(d) +
-  geom_bar(aes(factor, score, fill = factor), stat = "identity")
+The second factor is labelled as **Conscientiousness**. Individuals who score high on this factor are careful and diligent. Low scorers are impulsive and disorganized.
+
+```{r echo=FALSE}
+interpret(d, "Conscientiousness")
+```
+
+
+The third factor is labelled as **Emotional Stability**. This factor is often referred to by other names, such as Neruoticism or Negative Emotionality (in these two cases interpretations are inverted, as Neruoticism and Negative Emotionality can be though of as the opposite of Emotional Stability).
+
+```{r echo=FALSE}
+interpret(d, "Emotional Stability")
+```
+
+
+The fourth factor is labelled as **Extroversion**, it is sometimes given other names, such as Surgency or Positive Emotionality. Individuals who score high on this factor are outgoing and social. Individuals who score low tend to be shut-ins.
+
+```{r echo=FALSE}
+interpret(d, "Extroversion")
+```
+
+
+The fifth factor is labelled as **Intellect/Imagination**. This factor is also often called Openness to Experience. People who score low tend to be traditional and conventional.
+
+```{r echo=FALSE}
+interpret(d, "Intellect/Imagination")
 ```
