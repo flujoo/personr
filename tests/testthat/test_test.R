@@ -14,7 +14,7 @@ test_that("reversed item numbers", {
 test_that("item numbers under factors", {
   ns <- seq(1, length(test$statements), 5)
   for (i in ns) {
-    expect_true(i %in% test$factors$Extraversion)
+    expect_true(i %in% test$factors$Extroversion)
     expect_true((i + 1) %in% test$factors$Agreeableness)
     expect_true((i + 2) %in% test$factors$Conscientiousness)
     expect_true((i + 3) %in% test$factors$`Emotional Stability`)
@@ -37,7 +37,7 @@ test_that("score norm data", {
   out <- score(rs)[, names(test$factors)]
   # according to https://openpsychometrics.org/tests/IPIP-BFFM/
   expected <- data.frame(
-    Extraversion = 3,
+    Extroversion = 3,
     Agreeableness = 2.6,
     Conscientiousness = 2.6,
     `Emotional Stability` = 4.2,
