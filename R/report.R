@@ -1,3 +1,36 @@
+# plot score against norm data
+interpret <- function(score_, factor_) {
+  # all factor names
+  fs <- names(test$factors)
+  # color scheme from ggthemr::ggthemr('dust')
+  cs <- list(
+    "Agreeableness" = "#db735c",
+    "Conscientiousness" = "#efa86e",
+    "Emotional Stability" = "#9a8a76",
+    "Extraversion" = "#f3c57b",
+    "Intellect/Imagination" = "#7a6752"
+  )
+  # color for factor_
+  c_ <- cs[[factor_]]
+  # used in aes
+  f_sym <- rlang::sym(factor_)
+  # score for factor_
+  s <- score_[score_$factor == factor_, "score"]
+  # quantile of score for factor_
+  q <- ecdf(norm[[factor_]])(s)
+  q <- paste(round(q*100, 1), "%", sep = "")
+
+  ggplot2::ggplot() +
+    ggplot2::geom_density(
+      data = norm, ggplot2::aes(!!f_sym),
+      fill = c_, alpha = 0.4, color = c_) +
+    ggplot2::geom_vline(xintercept = s, color = c_, size = 1) +
+    # https://stats.stackexchange.com/questions/50080/
+    # estimate-quantile-of-value-in-a-vector
+    ggplot2::annotate("text", x = (s + 0.2), y = 0.2, label = q)
+}
+
+
 #' @title Generate a Personality Test Report
 #'
 #' @description Generate a personality test report without launching the test.
