@@ -20,5 +20,5 @@ cols <- c(names(test$factors), "race", "age", "gender", "country")
 norm <- readr::read_delim("BIG5/data.csv", delim = "\t") %>%
   dplyr::select(dplyr::one_of(response_cols), dplyr::everything()) %>%
   as.data.frame %>%
-  score %>%
+  score.data.frame %>%
   .[, cols]
