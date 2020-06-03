@@ -15,6 +15,7 @@ Imports:
     rlang,
     rmarkdown,
     shiny,
+    stats,
     whisker
 Suggests: 
     testthat

@@ -27,7 +27,7 @@ interpret <- function(score_, factor_) {
   # score for factor_
   s <- score_[score_$factor == factor_, "score"]
   # quantile of score for factor_
-  q <- ecdf(norm[[factor_]])(s)
+  q <- stats::ecdf(norm[[factor_]])(s)
   q <- paste(round(q*100, 1), "%", sep = "")
 
   ggplot2::ggplot() +
