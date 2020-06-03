@@ -12,6 +12,7 @@ LazyData: true
 Imports:
     ggplot2,
     ggthemr,
+    rlang,
     rmarkdown,
     shiny,
     whisker
