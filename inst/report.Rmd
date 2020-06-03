@@ -12,7 +12,7 @@ d <- score(responses)
 ```
 
 
-The theory behind this test divides personality into 5 traits or factors. Below is your score on each factor:
+The theory behind this test analyses personality into 5 traits or factors. Below is your score on each factor (on a scale from 1 to 5):
 
 ```{r echo=FALSE, fig.width=8.5}
 plot_score(d)
@@ -21,7 +21,7 @@ plot_score(d)
 
 The first factor is labelled as **Agreeableness**. A person high in agreeableness is friendly and optimistic. Low scorers are critical and aggressive.
 
-In the plot below, your score on this factor is compared with other people's scores. The plot displays a distribution of these people's scores on this factor. The percentage on this plot tells the percentage of people whose score is lower than yours.
+In the plot below, your score on this factor is compared with other people's scores. The plot displays a distribution of these people's scores on this factor. The percentage on this plot tells the percentage of people whose scores are lower than yours. The same goes for other factors.
 
 ```{r echo=FALSE}
 interpret(d, "Agreeableness")
