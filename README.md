@@ -1,5 +1,5 @@
 
-## Very Quick Introduction
+## Usage
 
 Download:
 
@@ -17,10 +17,10 @@ personr::launch_test()
 
 ## More
 
-`launch_test()` will open a personality test in your browser, and generate a report after you submit your responses.
+`launch_test()` opens a personality test in your browser, and generates a report after you click "Submit".
 
-The test used is from <https://openpsychometrics.org/tests/IPIP-BFFM/>, which is a popular, science-based personality test.
+The test is from <https://openpsychometrics.org/tests/IPIP-BFFM/>, which is a popular, science-based personality test.
 
-In your report, your test results are compared with other people's data, to show what your results mean. Other people's data is from <https://openpsychometrics.org/_rawdata/BIG5.zip>.
+In the report, your results are compared with other people's data, to show what these results mean. Other people's data is from <https://openpsychometrics.org/_rawdata/BIG5.zip>.
 
-Check these links for more details about the test and theory behind it.
+Check these links for more details about the test and theories behind it.
