@@ -8,16 +8,14 @@ output:
 
 ```{r echo=FALSE}
 ggthemr::ggthemr('dust')
+d <- score(responses)
 ```
 
 
 The theory behind this test divides personality into 5 traits or factors. Below is your score on each factor:
 
 ```{r echo=FALSE, fig.width=8.5}
-d <- score(responses)
-ggplot2::ggplot(d, ggplot2::aes(factor, score, fill = factor)) +
-  ggplot2::geom_col() +
-  ggplot2::coord_cartesian(ylim = c(1,5), expand = FALSE)
+plot_score(d)
 ```
 
 

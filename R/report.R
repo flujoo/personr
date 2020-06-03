@@ -1,3 +1,13 @@
+plot_score <- function(score_) {
+  ggplot2::ggplot(score_, ggplot2::aes(factor, score, fill = factor)) +
+    ggplot2::geom_col() +
+    ggplot2::coord_cartesian(ylim = c(1,5), expand = FALSE) +
+    ggplot2::geom_text(
+      ggplot2::aes(label = score), color = "white", size = 5,
+      position = ggplot2::position_nudge(y = -0.3))
+}
+
+
 # plot score against norm data
 interpret <- function(score_, factor_) {
   # all factor names
@@ -27,7 +37,8 @@ interpret <- function(score_, factor_) {
     ggplot2::geom_vline(xintercept = s, color = c_, size = 1) +
     # https://stats.stackexchange.com/questions/50080/
     # estimate-quantile-of-value-in-a-vector
-    ggplot2::annotate("text", x = (s + 0.2), y = 0.2, label = q)
+    ggplot2::annotate("text", x = (s - 0.3), y = 0.25,
+                      label = q, size = 5)
 }
 
 
