@@ -9,6 +9,8 @@
 system("sass style.scss inst/app/www/style.css")
 
 # use functions from personr to process data
+# but remove old data first to avoid errors
+file.remove("R/sysdata.rda")
 devtools::load_all()
 
 # use data in data-raw/
