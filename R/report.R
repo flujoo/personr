@@ -7,7 +7,7 @@ interpret <- function(score_, factor_) {
     "Agreeableness" = "#db735c",
     "Conscientiousness" = "#efa86e",
     "Emotional Stability" = "#9a8a76",
-    "Extraversion" = "#f3c57b",
+    "Extroversion" = "#f3c57b",
     "Intellect/Imagination" = "#7a6752"
   )
   # color for factor_

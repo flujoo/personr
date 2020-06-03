@@ -42,7 +42,7 @@ test$reversed <- c(
 
 # statement numbers under each factor
 test$factors <- list(
-  Extraversion = c(1, 6, 11, 16, 21, 26, 31, 36, 41, 46),
+  Extroversion = c(1, 6, 11, 16, 21, 26, 31, 36, 41, 46),
   Agreeableness = c(2, 7, 12, 17, 22, 27, 32, 37, 42, 47),
   Conscientiousness = c(3, 8, 13, 18, 23, 28, 33, 38, 43, 48),
   "Emotional Stability" = c(4, 9, 14, 19, 24, 29, 34, 39, 44, 49),
