@@ -86,5 +86,5 @@ report <- function(responses, path) {
   # render rmd
   rmarkdown::render(path_rmd, output_dir = path)
   # open
-  utils::browseURL(path_html)
+  utils::browseURL(normalizePath(path_html))
 }
