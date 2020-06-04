@@ -1,4 +1,9 @@
 
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.com/flujoo/personr.svg?branch=master)](https://travis-ci.com/flujoo/personr)
+<!-- badges: end -->
+
+
 ## Usage
 
 Download:
