@@ -4,7 +4,7 @@ Title: Test Your Personality
 Version: 1.0.0
 Author: Renfei Mao
 Maintainer: Renfei Mao <renfeimao@gmail.com>
-Description: This package generates a science-based personality
+Description: Generates a science-based personality
     test in your browser, and a report after you finish the test.
 URL: https://github.com/flujoo/personr
 License: GPL-2
