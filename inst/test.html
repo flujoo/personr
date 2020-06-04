@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{{ test$title }}</title>
+  <title>{{ personr:::test$title }}</title>
   <link type="text/css" rel="stylesheet" href="style.css"/>
   <meta name="viewport" content="width=device-width">
   {{ headContent() }}
@@ -10,10 +10,10 @@
 <body>
 <div class="test">
   <header>
-    <h1>{{ test$title }}</h1>
-    <p>{{ test$instruction }}</p>
+    <h1>{{ personr:::test$title }}</h1>
+    <p>{{ personr:::test$instruction }}</p>
   </header>
-  {{ htmlize_items() }}
+  {{ personr:::htmlize_items() }}
   {{ shiny::actionButton("submit", label = "Submit") }}
 </div>
 </body>

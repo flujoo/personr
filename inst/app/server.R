@@ -13,6 +13,6 @@ function(input, output, session) {
 
   # generate report when button pressed
   shiny::observeEvent(input$submit, {
-    report(vs$rs, personr_globals$wd)
+    personr::report(vs$rs, personr:::personr_globals$wd)
   })
 }

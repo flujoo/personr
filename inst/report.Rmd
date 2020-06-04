@@ -8,14 +8,14 @@ output:
 
 ```{r echo=FALSE}
 ggthemr::ggthemr('dust')
-d <- score(responses)
+d <- personr:::score.numeric(responses)
 ```
 
 
 The theory behind this test analyses personality into 5 traits or factors. Below is your score on each factor (on a scale from 1 to 5):
 
 ```{r echo=FALSE, fig.width=8.5}
-plot_score(d)
+personr:::plot_score(d)
 ```
 
 
@@ -24,33 +24,33 @@ The first factor is labelled as **Agreeableness**. A person high in agreeablenes
 In the plot below, your score on this factor is compared with other people's scores. The plot displays a distribution of these people's scores on this factor. The percentage on this plot tells the percentage of people whose scores are lower than yours. The same goes for other factors.
 
 ```{r echo=FALSE}
-interpret(d, "Agreeableness")
+personr:::interpret(d, "Agreeableness")
 ```
 
 
 The second factor is labelled as **Conscientiousness**. Individuals who score high on this factor are careful and diligent. Low scorers are impulsive and disorganized.
 
 ```{r echo=FALSE}
-interpret(d, "Conscientiousness")
+personr:::interpret(d, "Conscientiousness")
 ```
 
 
 The third factor is labelled as **Emotional Stability**. This factor is often referred to by other names, such as Neruoticism or Negative Emotionality (in these two cases interpretations are inverted, as Neruoticism and Negative Emotionality can be though of as the opposite of Emotional Stability).
 
 ```{r echo=FALSE}
-interpret(d, "Emotional Stability")
+personr:::interpret(d, "Emotional Stability")
 ```
 
 
 The fourth factor is labelled as **Extroversion**, it is sometimes given other names, such as Surgency or Positive Emotionality. Individuals who score high on this factor are outgoing and social. Individuals who score low tend to be shut-ins.
 
 ```{r echo=FALSE}
-interpret(d, "Extroversion")
+personr:::interpret(d, "Extroversion")
 ```
 
 
 The fifth factor is labelled as **Intellect/Imagination**. This factor is also often called Openness to Experience. People who score low tend to be traditional and conventional.
 
 ```{r echo=FALSE}
-interpret(d, "Intellect/Imagination")
+personr:::interpret(d, "Intellect/Imagination")
 ```
