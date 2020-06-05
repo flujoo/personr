@@ -10,10 +10,10 @@ Download:
 
 ```r
 # the package
-devtools::install_github('flujoo/personr')
+devtools::install_github("flujoo/personr")
 
 # themes for plots
-devtools::install_github('cttobin/ggthemr')
+devtools::install_github("cttobin/ggthemr")
 ```
 
 Test your personality:
