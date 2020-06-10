@@ -76,7 +76,7 @@ report <- function(responses, path) {
   if (!("ggthemr" %in% utils::installed.packages())) {
     message(
       "\nInstall a better-designed theme for your report:\n",
-      'devtools::install_github("cttobin/ggthemr")'
+      'devtools::install_github("cttobin/ggthemr")\n'
     )
   }
   path <- normalizePath(path)
