@@ -7,7 +7,7 @@ output:
 
 
 ```{r echo=FALSE}
-if ("ggthemr" %in% installed.packages()) {
+if ("ggthemr" %in% utils::installed.packages()) {
   ggthemr::ggthemr('dust')
 }
 
