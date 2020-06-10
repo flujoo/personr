@@ -5,7 +5,7 @@
 personr_globals <- new.env()
 
 # working directory
-personr_globals$wd <- getwd()
+personr_globals$wd <- ""
 
 
 # wrap scale up in HTML
