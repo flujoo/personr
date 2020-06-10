@@ -9,6 +9,9 @@ launch_test(path)
 \arguments{
 \item{path}{A string to set where to store your test report.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Launch a personality test and get a report.
 }

@@ -63,6 +63,8 @@ htmlize_items <- function() {
 #'
 #' @param path A string to set where to store your test report.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @details The test is called "Big Five Personality Test" and is from
 #' \url{https://openpsychometrics.org/tests/IPIP-BFFM/}.
 #'

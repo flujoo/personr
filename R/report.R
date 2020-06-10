@@ -50,6 +50,8 @@ interpret <- function(score_, factor_) {
 #' your answers to the questions in the test.
 #' @param path A string to set where to store your test report.
 #'
+#' @return No return value, called for side effects.
+#'
 #' @details \code{report} will be automatically called after
 #' you call \code{launch_test} and submit your responses. Two files
 #' named "report.Rmd" and "report.html" will generate in your path.

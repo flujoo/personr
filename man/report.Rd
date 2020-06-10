@@ -12,6 +12,9 @@ your answers to the questions in the test.}
 
 \item{path}{A string to set where to store your test report.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Generate a personality test report without launching the test.
 }
