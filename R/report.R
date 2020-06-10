@@ -63,6 +63,12 @@ interpret <- function(score_, factor_) {
 #'
 #' @export
 report <- function(responses, path) {
+  if (!("ggthemr" %in% installed.packages())) {
+    message(
+      "\nInstall a better-designed theme for your report:\n",
+      'devtools::install_github("cttobin/ggthemr")'
+    )
+  }
   # path to style.css
   path_style <- system.file("app", "www", "style.css",
                             package = "personr")
