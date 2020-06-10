@@ -24,6 +24,14 @@ The test is called "Big Five Personality Test" and is from
 After you finish and submit your responses,
 a report will generate in your path.
 }
+\examples{
+\dontrun{
+
+# launch the personality test in your working directory
+launch_test(".")
+}
+
+}
 \seealso{
 \code{\link{report}} for generating report
 without calling \code{launch_test}.

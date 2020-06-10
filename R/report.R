@@ -46,7 +46,7 @@ interpret <- function(score_, factor_) {
 #'
 #' @description Generate a personality test report without launching the test.
 #'
-#' @param responses A integer vector to represent
+#' @param responses A numeric vector to represent
 #' your answers to the questions in the test.
 #' @param path A string to set where to store your test report.
 #'
@@ -60,6 +60,16 @@ interpret <- function(score_, factor_) {
 #' to tell you what the results mean.
 #'
 #' @seealso \code{\link{launch_test}} to launch the personality test.
+#'
+#' @examples
+#' \dontrun{
+#'
+#' # a numeric vector representing your responses to the test
+#' rs <- rep(1, 50)
+#'
+#' # generate report in your working directory
+#' report(rs, ".")
+#' }
 #'
 #' @export
 report <- function(responses, path) {

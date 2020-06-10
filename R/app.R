@@ -76,6 +76,13 @@ htmlize_items <- function() {
 #' @seealso \code{\link{report}} for generating report
 #' without calling \code{launch_test}.
 #'
+#' @examples
+#' \dontrun{
+#'
+#' # launch the personality test in your working directory
+#' launch_test(".")
+#' }
+#'
 #' @export
 launch_test <- function(path) {
   # set working directory

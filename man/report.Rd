@@ -7,7 +7,7 @@
 report(responses, path)
 }
 \arguments{
-\item{responses}{A integer vector to represent
+\item{responses}{A numeric vector to represent
 your answers to the questions in the test.}
 
 \item{path}{A string to set where to store your test report.}
@@ -25,6 +25,17 @@ you call \code{launch_test} and submit your responses.
 
 The report summaries your test results, and compares them to other people's
 to tell you what the results mean.
+}
+\examples{
+\dontrun{
+
+# a numeric vector representing your responses to the test
+rs <- rep(1, 50)
+
+# generate report in your working directory
+report(rs, ".")
+}
+
 }
 \seealso{
 \code{\link{launch_test}} to launch the personality test.
