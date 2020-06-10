@@ -86,6 +86,7 @@ htmlize_items <- function() {
 #' @export
 launch_test <- function(path) {
   # set working directory
+  path <- normalizePath(path)
   assign('wd', path, personr_globals)
   shiny::runApp(
     appDir = system.file("app", package = "personr"),

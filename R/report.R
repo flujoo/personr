@@ -79,6 +79,7 @@ report <- function(responses, path) {
       'devtools::install_github("cttobin/ggthemr")'
     )
   }
+  path <- normalizePath(path)
   # path to style.css
   path_style <- system.file("app", "www", "style.css",
                             package = "personr")
@@ -104,5 +105,5 @@ report <- function(responses, path) {
   # render rmd
   rmarkdown::render(path_rmd, output_dir = path, quiet = TRUE)
   # open
-  utils::browseURL(normalizePath(path_html))
+  utils::browseURL(path_html)
 }
