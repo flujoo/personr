@@ -12,7 +12,7 @@ Download:
 # the package
 devtools::install_github("flujoo/personr")
 
-# themes for plots
+# a better-designed theme
 devtools::install_github("cttobin/ggthemr")
 ```
 
