@@ -19,8 +19,7 @@ devtools::install_github("cttobin/ggthemr")
 Test your personality:
 
 ```r
-# in your working directory
-personr::launch_test()
+personr::launch_test("your/working/directory")
 ```
 
 

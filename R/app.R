@@ -73,7 +73,7 @@ htmlize_items <- function() {
 #' without calling \code{launch_test}.
 #'
 #' @export
-launch_test <- function(path = getwd()) {
+launch_test <- function(path) {
   # set working directory
   assign('wd', path, personr_globals)
   shiny::runApp(
