@@ -4,7 +4,7 @@
 \alias{launch_test}
 \title{Launch a Personality Test}
 \usage{
-launch_test(path = getwd())
+launch_test(path)
 }
 \arguments{
 \item{path}{A string to set where to store your test report.}
