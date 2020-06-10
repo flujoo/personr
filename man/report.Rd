@@ -13,15 +13,15 @@ your answers to the questions in the test.}
 \item{path}{A string to set where to store your test report.}
 }
 \value{
-No return value, called for side effects.
+No return value, two files
+named "report.Rmd" and "report.html" generates in your path.
 }
 \description{
 Generate a personality test report without launching the test.
 }
 \details{
 \code{report} will be automatically called after
-you call \code{launch_test} and submit your responses. Two files
-named "report.Rmd" and "report.html" will generate in your path.
+you call \code{launch_test} and submit your responses.
 
 The report summaries your test results, and compares them to other people's
 to tell you what the results mean.

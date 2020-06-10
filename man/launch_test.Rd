@@ -10,7 +10,9 @@ launch_test(path)
 \item{path}{A string to set where to store your test report.}
 }
 \value{
-No return value, called for side effects.
+No return value, a Shiny app is launched, and two files
+named "report.Rmd" and "report.html" generates in your path
+after you click the "Submit" button in the app.
 }
 \description{
 Launch a personality test and get a report.
