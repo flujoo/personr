@@ -5,3 +5,4 @@
 ^preload\.R$
 ^demo\.gif$
 ^\.travis\.yml$
+^inst/src$
