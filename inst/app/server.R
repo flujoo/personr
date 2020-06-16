@@ -15,4 +15,9 @@ function(input, output, session) {
   shiny::observeEvent(input$submit, {
     personr::report(vs$rs, personr:::personr_globals$wd)
   })
+
+  # stop Shiny when browser is closed
+  session$onSessionEnded(function() {
+    stopApp()
+  })
 }
