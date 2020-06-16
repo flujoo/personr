@@ -27,14 +27,11 @@ The report summaries your test results, and compares them to other people's
 to tell you what the results mean.
 }
 \examples{
-\dontrun{
-
 # a numeric vector representing your responses to the test
 rs <- rep(1, 50)
 
-# generate report in your working directory
-report(rs, ".")
-}
+# generate report
+report(rs, path = tempdir())
 
 }
 \seealso{

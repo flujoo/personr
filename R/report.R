@@ -62,14 +62,11 @@ interpret <- function(score_, factor_) {
 #' @seealso \code{\link{launch_test}} to launch the personality test.
 #'
 #' @examples
-#' \dontrun{
-#'
 #' # a numeric vector representing your responses to the test
 #' rs <- rep(1, 50)
 #'
-#' # generate report in your working directory
-#' report(rs, ".")
-#' }
+#' # generate report
+#' report(rs, path = tempdir())
 #'
 #' @export
 report <- function(responses, path) {

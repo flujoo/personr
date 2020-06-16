@@ -77,10 +77,8 @@ htmlize_items <- function() {
 #' without calling \code{launch_test}.
 #'
 #' @examples
-#' \dontrun{
-#'
-#' # launch the personality test in your working directory
-#' launch_test(".")
+#' if (interactive()) {
+#'   launch_test(path = tempdir())
 #' }
 #'
 #' @export

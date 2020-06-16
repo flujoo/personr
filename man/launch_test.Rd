@@ -25,10 +25,8 @@ After you finish and submit your responses,
 a report will generate in your path.
 }
 \examples{
-\dontrun{
-
-# launch the personality test in your working directory
-launch_test(".")
+if (interactive()) {
+  launch_test(path = tempdir())
 }
 
 }
