@@ -70,7 +70,7 @@ interpret <- function(score_, factor_) {
 #'
 #' @export
 report <- function(responses, path) {
-  if (requireNamespace("ggthemr_", quietly = TRUE)) {
+  if (requireNamespace("ggthemr", quietly = TRUE)) {
     ggthemr::ggthemr("dust")
   } else {
     message(
