@@ -73,7 +73,9 @@ interpret <- function(score_, factor_) {
 #'
 #' @export
 report <- function(responses, path) {
-  if (!("ggthemr" %in% utils::installed.packages())) {
+  if (requireNamespace("ggthemr_", quietly = TRUE)) {
+    ggthemr::ggthemr("dust")
+  } else {
     message(
       "\nInstall a better-designed theme for your report:\n",
       'devtools::install_github("cttobin/ggthemr")\n'

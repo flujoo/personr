@@ -7,10 +7,6 @@ output:
 
 
 ```{r echo=FALSE}
-if ("ggthemr" %in% utils::installed.packages()) {
-  ggthemr::ggthemr('dust')
-}
-
 d <- personr:::score.numeric(responses)
 ```
 
