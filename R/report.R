@@ -89,7 +89,8 @@ interpret <- function(score_, factor_) {
 #' path <- tempdir()
 #' report(rs, path)
 #'
-#' unlink(path, recursive = TRUE)
+#' unlink(file.path(path, "report.html"))
+#' unlink(file.path(path, "report.Rmd"))
 #'
 #' @export
 report <- function(responses, path) {

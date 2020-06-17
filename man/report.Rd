@@ -34,7 +34,8 @@ rs <- rep(1, 50)
 path <- tempdir()
 report(rs, path)
 
-unlink(path, recursive = TRUE)
+unlink(file.path(path, "report.html"))
+unlink(file.path(path, "report.Rmd"))
 
 }
 \seealso{
