@@ -1,3 +1,10 @@
+theme <- ggplot2::theme(
+  panel.background = ggplot2::element_rect(fill = "#faf7f2"),
+  axis.line = ggplot2::element_line(colour = "#a59583"),
+  text = ggplot2::element_text(colour = "#766c60")
+)
+
+
 plot_score <- function(score_) {
   ggplot2::ggplot(score_, ggplot2::aes(factor, score, fill = factor)) +
     ggplot2::geom_col() +
@@ -15,7 +22,8 @@ plot_score <- function(score_) {
         "Extroversion" = "#f3c57b",
         "Intellect/Imagination" = "#7a6752"
       )
-    )
+    ) +
+    theme
 }
 
 
@@ -49,7 +57,8 @@ interpret <- function(score_, factor_) {
     # https://stats.stackexchange.com/questions/50080/
     # estimate-quantile-of-value-in-a-vector
     ggplot2::annotate("text", x = (s - 0.3), y = 0.25,
-                      label = q, size = 5)
+                      label = q, size = 5, color = "#766c60") +
+    theme
 }
 
 
