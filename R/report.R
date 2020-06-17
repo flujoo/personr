@@ -4,7 +4,18 @@ plot_score <- function(score_) {
     ggplot2::coord_cartesian(ylim = c(1,5), expand = FALSE) +
     ggplot2::geom_text(
       ggplot2::aes(label = score), color = "white", size = 5,
-      position = ggplot2::position_nudge(y = -0.3))
+      position = ggplot2::position_nudge(y = -0.3)) +
+    ggplot2::scale_fill_manual(
+      "factor",
+      # color scheme from ggthemr::ggthemr('dust')
+      values = c(
+        "Agreeableness" = "#db735c",
+        "Conscientiousness" = "#efa86e",
+        "Emotional Stability" = "#9a8a76",
+        "Extroversion" = "#f3c57b",
+        "Intellect/Imagination" = "#7a6752"
+      )
+    )
 }
 
 
