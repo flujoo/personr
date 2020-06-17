@@ -6,7 +6,7 @@
 
 ## Usage
 
-Download:
+Install package:
 
 ```r
 devtools::install_github("flujoo/personr")
