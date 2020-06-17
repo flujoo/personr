@@ -9,11 +9,7 @@
 Download:
 
 ```r
-# the package
 devtools::install_github("flujoo/personr")
-
-# a better-designed theme
-devtools::install_github("cttobin/ggthemr")
 ```
 
 Test your personality:
