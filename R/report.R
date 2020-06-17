@@ -102,9 +102,9 @@ report <- function(responses, path) {
   path_report <- system.file("report.Rmd", package = "personr")
 
   # path to rendered report.Rmd
-  path_rmd <- paste(path, "report.Rmd", sep = "/")
+  path_rmd <- file.path(path, "report.Rmd")
   # path to rendered report.html
-  path_html <- paste(path, "report.html", sep = "/")
+  path_html <- file.path(path, "report.html")
 
   # load report template
   report_template <- readLines(path_report)
