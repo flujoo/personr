@@ -31,7 +31,10 @@ to tell you what the results mean.
 rs <- rep(1, 50)
 
 # generate report
-report(rs, path = tempdir())
+path <- tempdir()
+report(rs, path)
+
+unlink(path, recursive = TRUE)
 
 }
 \seealso{
