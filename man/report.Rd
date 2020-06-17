@@ -27,15 +27,18 @@ The report summaries your test results, and compares them to other people's
 to tell you what the results mean.
 }
 \examples{
-# a numeric vector representing your responses to the test
-rs <- rep(1, 50)
 
-# generate report
-path <- tempdir()
-report(rs, path)
+if (interactive()) {
+  # a numeric vector representing your responses to the test
+  rs <- rep(1, 50)
 
-unlink(file.path(path, "report.html"))
-unlink(file.path(path, "report.Rmd"))
+  # generate report
+  path <- tempdir()
+  report(rs, path)
+
+  unlink(file.path(path, "report.html"))
+  unlink(file.path(path, "report.Rmd"))
+}
 
 }
 \seealso{
