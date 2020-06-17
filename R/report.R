@@ -70,14 +70,6 @@ interpret <- function(score_, factor_) {
 #'
 #' @export
 report <- function(responses, path) {
-  if (requireNamespace("ggthemr", quietly = TRUE)) {
-    ggthemr::ggthemr("dust")
-  } else {
-    message(
-      "\nInstall a better-designed theme for your report:\n",
-      'devtools::install_github("cttobin/ggthemr")\n'
-    )
-  }
   path <- normalizePath(path)
   # path to style.css
   path_style <- system.file("app", "www", "style.css",
