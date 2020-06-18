@@ -90,9 +90,6 @@ interpret <- function(score_, factor_) {
 #'   # generate report
 #'   path <- tempdir()
 #'   report(rs, path)
-#'
-#'   unlink(file.path(path, "report.html"))
-#'   unlink(file.path(path, "report.Rmd"))
 #' }
 #'
 #' @export
