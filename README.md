@@ -9,7 +9,7 @@
 Install package:
 
 ```r
-devtools::install_github("flujoo/personr")
+install.packages("personr")
 ```
 
 Test your personality:
