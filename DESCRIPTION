@@ -1,7 +1,7 @@
 Package: personr
 Type: Package
 Title: Test Your Personality
-Version: 1.0.0
+Version: 1.0.1
 Author: Renfei Mao
 Maintainer: Renfei Mao <renfeimao@gmail.com>
 Description: An R-package-version of an open online science-based personality
