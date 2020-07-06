@@ -25,7 +25,7 @@ personr::launch_test(".")
 
 ## Demo
 
-![](demo.gif)
+![](tools/demo.gif)
 
 
 ## More
