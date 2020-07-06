@@ -1,8 +1,10 @@
-# personr: Test Your Personality in R
+# personr
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/flujoo/personr.svg?branch=master)](https://travis-ci.com/flujoo/personr) [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/personr?color=blue)](https://r-pkg.org/pkg/personr)
 <!-- badges: end -->
+
+Test your personality in R.
 
 
 ## Usage
