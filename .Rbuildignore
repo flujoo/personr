@@ -4,3 +4,4 @@
 ^style\.scss$
 ^preload\.R$
 ^\.travis\.yml$
+^demo\.gif$
